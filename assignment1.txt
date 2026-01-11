@@ -94,3 +94,105 @@ int main(){
     return 0 ;
 }
 
+q4]
+#include <stdio.h>
+
+int main(){
+    
+    int age ;
+    do{
+    printf("Enter your age  ");
+    scanf("%d" , &age);
+    }while(age<18);
+
+    int india ;
+    do{
+    printf("Enter 1 if car manufacture in india else 0 : ");
+    scanf("%d",&india);
+    }while(india!=0 && india!=1);
+
+    int acc ;
+    do{
+    printf("Enter last time you had accident in year ");
+    scanf("%d",&acc);
+    }while(acc<0);
+
+
+    int prem = 6;
+    int excess = 0 ;
+    int a = 0 ;
+    // 0 = comprehensive , 1 = third party policy 
+    age >= 25 ? ( india ==1 ? (acc < 3 ? :(prem=7, excess=100) ) : (acc <3 ?(excess=100):(prem=7,a=1)) ) : (india == 1?(acc<4 ?(excess=100):(a=-1)):(acc<4?(prem=8 , excess=100):(a=-1))) ;
+
+    if(a>=0){
+        if (a==0){
+            printf("policy : Comprensive policy \n");
+        }
+        else{
+            printf("policy : third party policy\n");
+        }
+    }
+    else{
+        printf("policy : no policy car\n");
+        return 0;
+    }
+
+    printf("premium : %d percent  of car \n",prem);
+    printf("excess : %d" ,excess);
+
+    return 0;
+
+}
+
+q5]
+#include <stdio.h>
+
+int main(){
+    int sales = 100 ; 
+    int profit = 500 ;
+    int ocost = 10000 ;
+    int add = 1000;
+
+    int cost = sales * profit - ocost ;
+    while (add < cost){
+        add *=2;
+        sales = (sales*12)/10;
+        cost = sales * profit - ocost ;
+    }
+
+    add= (add/2);
+    sales = (sales *10)/12;
+    cost = sales * profit - ocost -add;
+
+    printf("number of super duper sales = %d \n",sales);
+    printf("advertisement budget  = %d \n",add);
+    printf("net profit  = %d \n",cost);
+    
+    return 0 ;
+}
+
+q6]
+#include <stdio.h>
+
+int main(){
+    int r ;
+    printf("Enter radius of cirlce ");
+    scanf("%d",&r);
+
+    int point = 0 ;
+    int total = -1*r;
+    for(; total <= r ; total++){
+        int i = -1 * r ;
+
+        while (i<=r){
+            int res = total * total + i * i ;
+            if (res < r){
+                point ++;
+            }
+            i++;
+        }
+    }
+    printf("total number of point in cirlce is %d ", point );
+  
+}
+
