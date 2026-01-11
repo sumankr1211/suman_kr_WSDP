@@ -56,4 +56,41 @@ Q1.
         Gets printed only once!!
         Gets printed only once!!
 
+Q2]
+#include <stdio.h>
+
+int main(){
+    int num1 , quo , rem ;
+
+    printf("Enter number to be rounded off ..  ");
+    scanf("%d",&num1);
+    printf("Enter number whoose multiple is to be taken .. ");
+    scanf("%d",&quo);
+
+    rem = num1 %quo;
+
+    if (rem < (quo-rem)){
+        printf("number after rounding off = %d " , num1 - rem);
+    }
+    else {
+        printf("number after rounding off = %d " , num1 - rem + quo );
+    }
+    
+    return 0 ;
+}
+
+q3]
+#include <stdio.h>
+
+int main(){
+    
+    int far , deg ;
+    printf("Enter temprature in farenheit  - ");
+    scanf("%d",&far);
+
+    deg = ((far -32 )*10)/18 ; 
+    printf("temprature in degree is %d ",deg);
+
+    return 0 ;
+}
 
